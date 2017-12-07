@@ -4,6 +4,10 @@ Algorithms and Data Structure achieved by C++ and Python
 # Outline
 - [Books & MOOCs](#Books-&-MOOCs)
 - [Analysis Of Algorithm](#Analysis-Of-Algorithm)
+- [Union Find](#Union-Find)
+	- [Quick Find](#Quick-Find)
+	- [Quick Union](#Quick-Union)
+	- [Weighted Quick Union](#Weighted-Quick-Union)
 
 ## Books & MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
@@ -97,6 +101,8 @@ void union(int p, int q)
 	id[i] = j;
 }
 ```
+#### Code(Python)
+coming soon
 
 #### Cost model
 Number of array accesses(for read or write)
@@ -106,3 +112,68 @@ Number of array accesses(for read or write)
 |Quick Find|N|N|1|
 |Quick Union|N|N(includes cost of finding roots)|N|
 
+Trees can get tall and find is too expensive(could be N array accesses).
+
+### Weighted Quick Union
+
+#### Improvement
+- Keep track of size of each tree(number of objects).
+- Balance by linking root of smaller tree to root of large tree.
+
+#### Data structure
+Same as Quick Union, but maintain extra array sz[i] to count number of objects in the tree rooted at i.
+
+#### Find
+Identical to Quick Union
+
+#### Union
+- Link root of smaller tree to root of larger tree.
+- Update the sz[] array.
+
+#### Code(C)
+```C
+int root(int p)
+{
+	while (id[p] != p)
+	{
+		p = id[p];
+	}
+	return p;
+}
+
+int find(int p, int q)
+{
+	return root(p) == root(q);
+}
+
+void union(int p, int q)
+{
+	int i = root(p);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
+	int j = root(q);
+
+	if (i == j)
+		return;
+	if (sz[i] < sz[j])
+	{
+		id[i] = j;
+		sz[j] += sz[i];
+	}
+	else
+	{
+		id[j] = i;
+		sz[i] += sz[j];
+	}
+}
+```
+
+#### Code(Python)
+coming soon
+
+#### Cost model
+Number of array accesses(for read or write)
+
+| Algorithm | Initialize | Union | Find |
+|:---------:|:----------:|:-----:|:----:|
+|Quick Find|N|N|1|
+|Quick Union|N|N(includes cost of finding roots)|N|
+|Weighted QU|N|lg N(includes cost of finding roots)|lg N|
