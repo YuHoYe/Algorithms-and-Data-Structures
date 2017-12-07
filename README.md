@@ -5,9 +5,9 @@ Algorithms and Data Structure achieved by C++ and Python
 - [Books & MOOCs](#Books-&-MOOCs)
 - [Analysis Of Algorithm](#Analysis-Of-Algorithm)
 - [Union Find](#Union-Find)
-	- [Quick Find](##Quick-Find)
-	- [Quick Union](##Quick-Union)
-	- [Weighted Quick Union](##Weighted-Quick-Union)
+	- [Quick Find](#Quick-Find)
+	- [Quick Union](#Quick-Union)
+	- [Weighted Quick Union](#Weighted-Quick-Union)
 
 # Books & MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
@@ -196,3 +196,4 @@ int root(int p)
 
 ### Code(Python)
 coming soon
+
