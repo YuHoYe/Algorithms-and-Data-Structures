@@ -2,12 +2,12 @@
 Algorithms and Data Structure achieved by C++ and Python
 
 # Outline
-- [Books & MOOCs](#Books-&-MOOCs)
-- [Analysis Of Algorithm](#Analysis-Of-Algorithm)
-- [Union Find](#Union-Find)
-	- [Quick Find](#Quick-Find)
-	- [Quick Union](#Quick-Union)
-	- [Weighted Quick Union](#Weighted-Quick-Union)
+- [Books & MOOCs](#Books-&-moocs)
+- [Analysis Of Algorithm](#analysis-of-algorithm)
+- [Union Find](#union-find)
+	- [Quick Find](#quick-find)
+	- [Quick Union](#quick-union)
+	- [Weighted Quick Union](#weighted-quick-union)
 
 # Books & MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
