@@ -190,3 +190,13 @@ int root(int p)
 #### Code(Python)
 coming soon
 
+#### Cost model
+M union-find operations on a set of N objects
+
+| Algorithm | Worst-case time |
+|:---------:|:---------------:|
+|Quick Find|MN|
+|Quick Union|MN|
+|Weighted QU|N + M log N|
+|QU with path compression|N + M log N|
+|Weighted QU with path compression|N + M lg* N|
