@@ -20,6 +20,9 @@ Given a set of N objects.
 - **Union command**: connect two objects.
 - **Find query**: is there a path connecting the two objects?
 
+## Test
+
+
 ## Quick Find
 
 - Data structure
@@ -37,7 +40,7 @@ int find(int p, int q)
 	return (id[p] == id[q]);
 }
 
-void union(int p, int q)
+void unioned(int p, int q)
 {
 	int pid = id[p];			// It's necessary for these two lines code
 	int qid = id[q];			// The value of id[p] will change while i > p
@@ -90,7 +93,7 @@ int find(int p, int q)
 	return root(p) == root(q);
 }
 
-void union(int p, int q)
+void unioned(int p, int q)
 {
 	int i = root(p);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
 	int j = root(q);
@@ -139,7 +142,7 @@ int find(int p, int q)
 	return root(p) == root(q);
 }
 
-void union(int p, int q)
+void unioned(int p, int q)
 {
 	int i = root(p);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
 	int j = root(q);
