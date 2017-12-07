@@ -20,9 +20,6 @@ Given a set of N objects.
 - **Union command**: connect two objects.
 - **Find query**: is there a path connecting the two objects?
 
-## Test
-
-
 ## Quick Find
 
 - Data structure
@@ -203,3 +200,7 @@ M union-find operations on a set of N objects
 |Weighted QU|N + M log N|
 |QU with path compression|N + M log N|
 |Weighted QU with path compression|N + M lg* N|
+
+
+## Test
+Source: [test union find](./union-find/test-union-find.cpp)
