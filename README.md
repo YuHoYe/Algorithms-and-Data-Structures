@@ -2,8 +2,8 @@
 Algorithms and Data Structure achieved by C++ and Python
 
 # Outline
-- [Books & MOOCs](#books-&-moocs)
-- [Analysis Of Algorithm](#analysis-of-algorithm)
+- [Books & MOOCs](#books-moocs)
+- [Analysis Of Algorithm](#analysis-of-algorithms)
 - [Union Find](#union-find)
 	- [Quick Find](#quick-find)
 	- [Quick Union](#quick-union)
