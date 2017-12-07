@@ -8,6 +8,8 @@ Algorithms and Data Structure achieved by C++ and Python
 	- [Quick Find](#quick-find)
 	- [Quick Union](#quick-union)
 	- [Weighted Quick Union](#weighted-quick-union)
+	- [Test](#test)
+	- [Application](#application)
 
 # Books and MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
@@ -206,3 +208,6 @@ M union-find operations on a set of N objects
 display the data structure tree in command line by using ->. You can find the difference between different union find algorithms.
 
 [test union find.cpp](./Union%20Find/test%20union%20find.cpp)
+
+## Application
+
