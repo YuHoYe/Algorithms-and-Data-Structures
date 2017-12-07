@@ -2,17 +2,17 @@
 Algorithms and Data Structure achieved by C++ and Python
 
 # Outline
-- [Books & MOOCs](#books-moocs)
-- [Analysis Of Algorithm](#analysis-of-algorithms)
+- [Books and MOOCs](#books-and-moocs)
+- [Analysis of Algorithm](#analysis-of-algorithms)
 - [Union Find](#union-find)
 	- [Quick Find](#quick-find)
 	- [Quick Union](#quick-union)
 	- [Weighted Quick Union](#weighted-quick-union)
 
-# Books & MOOCs
+# Books and MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
 
-# Analysis Of Algorithms
+# Analysis of Algorithms
 Algorithm complexity is something designed to compare two algorithms at the idea level — ignoring low-level details such as the implementation programming language, the hardware the algorithm runs on, or the instruction set of the given CPU.
 
 # Union Find
