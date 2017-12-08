@@ -2,6 +2,7 @@
 - [selection sort](#selection-sort)
 - [insertion sort](#insertion-sort)
 - [shell sort](#shell-sort)
+- [test](#test)
 
 # selection sort
 - in iteration i, find index min of smallest remaining entry.
@@ -89,4 +90,5 @@ coming soon
 |insertion sort|1/4N^2|1/4N^2|
 |shell sort|2.5N lg N(no accurate model)|-|
 
+# test
 
