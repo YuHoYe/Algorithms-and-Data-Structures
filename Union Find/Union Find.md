@@ -1,7 +1,7 @@
 # Outline of Union Find
 Given a set of N objects. 
-- **Union command**: connect two objects.
-- **Find query**: is there a path connecting the two objects?
+**Union command**: connect two objects.
+**Find query**: is there a path connecting the two objects?
 
 - [Quick Find](#quick-find)
 - [Quick Union](#quick-union)
