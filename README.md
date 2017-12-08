@@ -7,9 +7,9 @@ Algorithms and Data Structure achieved by C++ and Python
 - [Union Find](./Union%20Find/Union%20Find.md)
 	- [Quick Find](./Union%20Find/Union%20Find.md#quick-find)
 	- [Quick Union](./Union%20Find/Union%20Find.md#quick-union)
-	- [Weighted Quick Union](#weighted-quick-union)
-	- [Test](#test)
-	- [Application](#application)
+	- [Weighted Quick Union](./Union%20Find/Union%20Find.md#weighted-quick-union)
+	- [Test](./Union%20Find/Union%20Find.md#test)
+	- [Application(percolate simulation)](./Union%20Find/Union%20Find.md#applicationpercolate-simulation)
 
 # Books and MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
