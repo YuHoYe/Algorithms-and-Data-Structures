@@ -10,10 +10,10 @@ Algorithms and Data Structure achieved by C++ and Python
 	- [Weighted Quick Union](./Union%20Find/Union%20Find.md#weighted-quick-union)
 	- [Test](./Union%20Find/Union%20Find.md#test)
 	- [Application(percolate simulation)](./Union%20Find/Union%20Find.md#applicationpercolate-simulation)
-- [Elementary Sorts](./Elementary%20Sorts/)
+- [Elementary Sorts](./Elementary%20Sorts/Elementary%20Sorts.md)
 	- [selection sort](./Elementary%20Sorts/Elementary%20Sorts.md/#selection-sort)
-	- [insertion sort](#insertion-sort)
-	- [shell sort](#shell-sort)
+	- [insertion sort](./Elementary%20Sorts/Elementary%20Sorts.md/#insertion-sort)
+	- [shell sort](./Elementary%20Sorts/Elementary%20Sorts.md/#shell-sort)
 
 # Books and MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
