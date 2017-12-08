@@ -1,5 +1,6 @@
 # Outline of Union Find
 [Wiki](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
+
 [并查集(Union-Find)算法介绍](http://blog.csdn.net/dm_vincent/article/details/7655764)
 
 # Outline
