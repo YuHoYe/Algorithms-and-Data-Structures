@@ -1,4 +1,7 @@
 # Outline of Elementary Sorts
+- [selection sort](#selection-sort)
+- [insertion sort](#insertion-sort)
+- [shell sort](#shell-sort)
 
 # selection sort
 - in iteration i, find index min of smallest remaining entry.
