@@ -5,7 +5,7 @@
 - [Selection sort](#selection-sort)
 - [insertion sort](#insertion-sort)
 - [shell sort](#shell-sort)
-- [fast sort](#fast-sort)
+- [quick sort](#quick-sort)
 - [test](#test)
 
 # Selection sort
