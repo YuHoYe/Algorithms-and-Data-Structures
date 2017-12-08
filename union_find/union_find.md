@@ -1,10 +1,8 @@
 # Outline of Union Find
-Given a set of N objects. 
+[Wiki](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
+[并查集(Union-Find)算法介绍](http://blog.csdn.net/dm_vincent/article/details/7655764)
 
-**Union command**: connect two objects.
-
-**Find query**: is there a path connecting the two objects?
-
+# Outline
 - [quick find](#quick-find)
 - [quick union](#quick-union)
 - [weighted QU with path compression](#weighted-qu-with-path-compression)
