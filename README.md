@@ -17,6 +17,7 @@ Algorithms and Data Structure achieved by C++ and Python
 # Analysis of Algorithms
 Algorithm complexity is something designed to compare two algorithms at the idea level — ignoring low-level details such as the implementation programming language, the hardware the algorithm runs on, or the instruction set of the given CPU.
 
+[](./img/commonly-used-notations.png)
 
 # Union Find
 Given a set of N objects. 
@@ -210,7 +211,7 @@ display the data structure tree in command line by using ->. You can find the di
 
 [test union find.cpp](./Union%20Find/test%20union%20find.cpp)
 
-## Application
+## Application(percolate simulation)
 - N-by-N grid of sites
 - Each site is open with probabilaty p
 - System percolates iff top and bottom are connected by open sites.
