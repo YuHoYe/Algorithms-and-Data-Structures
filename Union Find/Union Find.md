@@ -8,6 +8,7 @@ Given a set of N objects.
 - [quick find](#quick-find)
 - [quick union](#quick-union)
 - [weighted quick union](#weighted-quick-union)
+- [quick union with path compression](#quick-union-with-path-compression)
 - [test](#test)
 - [application(percolate simulation)](#applicationpercolate-simulation)
 
