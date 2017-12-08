@@ -6,7 +6,7 @@ Algorithms and Data Structure achieved by C++ and Python
 - [Analysis of Algorithm](#analysis-of-algorithms)
 - [Union Find](./Union%20Find/Union%20Find.md)
 	- [Quick Find](./Union%20Find/Union%20Find.md#L12)
-	- [Quick Union](#quick-union)
+	- [Quick Union](./Union%20Find/Union%20Find.md#L46)
 	- [Weighted Quick Union](#weighted-quick-union)
 	- [Test](#test)
 	- [Application](#application)
