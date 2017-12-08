@@ -91,4 +91,11 @@ coming soon
 |shell sort|2.5N lg N(no accurate model)|-|
 
 # test
+[test elementary sorts.cpp](./test%20elementary%20sorts.cpp)
+
+| algorithm | time(# of elements is 20480) |
+|:---------:|:----------:|
+|selection sort|713|
+|insertion sort|2153|
+|shell sort|12|
 
