@@ -9,7 +9,7 @@ Given a set of N objects.
 - [Quick Union](#quick-union)
 - [Weighted Quick Union](#weighted-quick-union)
 - [Test](#test)
-- [Application(percolate simulation)](#application(percolate-simulation))
+- [Application(percolate simulation)](#applicationpercolate-simulation)
 
 # Quick Find
 
