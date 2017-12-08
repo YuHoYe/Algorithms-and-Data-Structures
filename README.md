@@ -1,16 +1,15 @@
 # Algorithms and Data Structures
-Algorithms and Data Structure achieved by C++ and Python
 
 # Outline
 - [Books and MOOCs](#books-and-moocs)
 - [Analysis of Algorithm](#analysis-of-algorithms)
-- [Union Find](./Union%20Find/Union%20Find.md)
-	- [quick find](./Union%20Find/Union%20Find.md#quick-find)
-	- [quick union](./Union%20Find/Union%20Find.md#quick-union)
-	- [weighted quick union](./Union%20Find/Union%20Find.md#weighted-quick-union)
-	- [weighted QU with path compression](./Union%20Find/Union%20Find.md#weighted-qu-with-path-compression)
-	- [test](./Union%20Find/Union%20Find.md#test)
-	- [application(percolate simulation)](./Union%20Find/Union%20Find.md#applicationpercolate-simulation)
+- [Union Find](./union_find/union_find.md)
+	- [quick find](./union_find/union_find.md#quick-find)
+	- [quick union](./union_find/union_find.md#quick-union)
+	- [weighted quick union]./union_find/union_find.md#weighted-quick-union)
+	- [weighted QU with path compression](./union_find/union_find.md#weighted-qu-with-path-compression)
+	- [test](./union_find/union_find.md#test)
+	- [application(percolate simulation)](./union_find/union_find.md#applicationpercolate-simulation)
 - [Elementary Sorts](./Elementary%20Sorts/Elementary%20Sorts.md)
 	- [selection sort](./Elementary%20Sorts/Elementary%20Sorts.md/#selection-sort)
 	- [insertion sort](./Elementary%20Sorts/Elementary%20Sorts.md/#insertion-sort)
