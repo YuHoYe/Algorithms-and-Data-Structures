@@ -196,7 +196,7 @@ M union-find operations on a set of N objects
 # Test
 display the data structure tree in command line by using ->. You can find the difference between different union find algorithms.
 
-[test union find.cpp](./Union%20Find/test%20union%20find.cpp)
+[test union find.cpp](./test%20union%20find.cpp)
 
 # Application(percolate simulation)
 - N-by-N grid of sites
@@ -207,4 +207,4 @@ When N is large, theory guarantees a sharp threshold p*
 - p > p*: almost certainly percolates.
 - p < p*: almost certainly does not percolate.
 
-[percolates.cpp](./Union%20Find/percolates.cpp)
+[percolates.cpp](./percolates.cpp)
