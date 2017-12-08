@@ -65,7 +65,7 @@ Union is too expensive. It take N^2 array accesses to process a sequence of N un
 - Union
 	- To merge components containing p and q, set the id of p's root to the id of q's root.
 
-## (C++
+## C++
 ```C++
 int root(int p)
 {
