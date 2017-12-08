@@ -3,7 +3,7 @@
 # Outline
 - [Books and MOOCs](#books-and-moocs)
 - [Analysis of Algorithm](#analysis-of-algorithms)
-- [Sorting algorithm](./sorting_algorithm/sorting_algorithm.md)
+- [Sorting Algorithm](./sorting_algorithm/sorting_algorithm.md)
 	- [selection sort](./sorting_algorithm/sorting_algorithm.md/#selection-sort)
 	- [insertion sort](./sorting_algorithm/sorting_algorithm.md/#insertion-sort)
 	- [shell sort](./sorting_algorithm/sorting_algorithm.md/#shell-sort)
