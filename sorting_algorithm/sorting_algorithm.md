@@ -10,8 +10,8 @@
 
 # selection sort
 [Wiki](https://en.wikipedia.org/wiki/Selection_sort)
-- in iteration i, find index min of smallest remaining entry.
-- swap a[i] and a[min].
+- in iteration i, find index iMin of smallest remaining entry.
+- swap a[i] and a[iMin].
 
 ## C
 ```C
