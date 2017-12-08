@@ -17,7 +17,7 @@ Algorithms and Data Structure achieved by C++ and Python
 # Analysis of Algorithms
 Algorithm complexity is something designed to compare two algorithms at the idea level — ignoring low-level details such as the implementation programming language, the hardware the algorithm runs on, or the instruction set of the given CPU.
 
-[](./img/commonly-used-notations.png)
+[commonly-used notations](./img/commonly-used-notations.png)
 
 # Union Find
 Given a set of N objects. 
