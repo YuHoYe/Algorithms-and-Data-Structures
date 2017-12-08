@@ -21,8 +21,8 @@ Given a set of N objects.
 - Union
 	- To merge components containing p and q, change all entries whose id equals id[p] to id[q].
 
-### Code(C)
-```C
+## Code(C++)
+```C++
 int find(int p, int q)
 {
 	return (id[p] == id[q]);
@@ -42,10 +42,10 @@ void unioned(int p, int q)
 }
 ```
 
-### Code(Python)
+## Code(Python)
 coming soon
 
-### Cost Model
+## Cost Model
 Number of array accesses(for read or write)
 
 | Algorithm | Initialize | Union | Find |
@@ -65,8 +65,8 @@ Uion is too expensive. It take N^2 array accesses to process a sequence of N uni
 - Union
 	- To merge components containing p and q, set the id of p's root to the id of q's root.
 
-### Code
-```C
+## Code(C++)
+```C++
 int root(int p)
 {
 	while (id[p] != p)
@@ -88,10 +88,10 @@ void unioned(int p, int q)
 	id[i] = j;
 }
 ```
-### Code(Python)
+## Code(Python)
 coming soon
 
-### Cost model
+## Cost model
 Number of array accesses(for read or write)
 
 | Algorithm | Initialize | Union | Find |
@@ -114,8 +114,8 @@ Trees can get tall and find is too expensive(could be N array accesses).
 	- Link root of smaller tree to root of larger tree.
 	- Update the sz[] array.
 
-### Code(C)
-```C
+## Code(C++)
+```C++
 int root(int p)
 {
 	while (id[p] != p)
@@ -150,10 +150,10 @@ void unioned(int p, int q)
 }
 ```
 
-### Code(Python)
+## Code(Python)
 coming soon
 
-### Cost model
+## Cost model
 Number of array accesses(for read or write)
 
 | Algorithm | Initialize | Union | Find |
@@ -165,8 +165,8 @@ Number of array accesses(for read or write)
 # Quick union with path compression
 Just after computing the root of p, set the id of each examined node to point to that root.
 
-### Code(C)
-```C
+## Code(C++)
+```C++
 int root(int p)
 {
 	while (id[p] != p)
@@ -178,10 +178,10 @@ int root(int p)
 }
 ```
 
-### Code(Python)
+## Code(Python)
 coming soon
 
-### Cost model
+## Cost model
 M union-find operations on a set of N objects
 
 | Algorithm | Worst-case time |
