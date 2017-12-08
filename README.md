@@ -217,3 +217,5 @@ display the data structure tree in command line by using ->. You can find the di
 When N is large, theory guarantees a sharp threshold p*
 - p > p*: almost certainly percolates.
 - p < p*: almost certainly does not percolate.
+
+[percolates.cpp](./Union%20Find/percolates.cpp)
