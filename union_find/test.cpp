@@ -1,29 +1,49 @@
 #include <iostream>
 #include <cmath>
+#include <windows.h>
+#include "union_find.h"
 
-#define N 100
+#define N 1000
 
-int root(int p);
-int find(int p, int q);
-void unioned(int p, int q);
 
-int id[N];
-int sz[N] = { 1 };
 
 void main()
 {
+	int id[N];
+	int sz[N] = { 1 };
+
 	// 初始化，每个点都不相连，数组下标代表点的index，数组内容用来判定是否相连
 	for (int i = 0; i < N; i++)
 		id[i] = i;
 
+	double time_union = 0;
+	double time_find = 0;
+	LARGE_INTEGER nFreq;
+	LARGE_INTEGER nBeginTime;
+	LARGE_INTEGER nEndTime;
+	QueryPerformanceFrequency(&nFreq);
 
+	QueryPerformanceCounter(&nBeginTime); // Start the timer for union
 	for (int i = 0; i < N ; i++)
 	{
 		int p = rand() % N;
 		int q = rand() % N;
-		unioned(p, q);
+		WQUPC_unioned(p, q, id, sz);
 	}
+	QueryPerformanceCounter(&nEndTime);	// End the timer for union
+	time_union = (double)(nEndTime.QuadPart - nBeginTime.QuadPart) / (double)nFreq.QuadPart; // Calculate the union function run time
 
+	QueryPerformanceCounter(&nBeginTime); // Start the timer for find
+	for (int i = 0; i < N; i++)
+	{
+		int p = rand() % N;
+		int q = rand() % N;
+		WQUPC_find(p, q, id);
+	}
+	QueryPerformanceCounter(&nEndTime);	// End the timer for find
+	time_find = (double)(nEndTime.QuadPart - nBeginTime.QuadPart) / (double)nFreq.QuadPart; // Calculate the find function run time
+
+	// show the data structure tree in command line
 	for (int i = 0; i < N; i++)
 	{
 		std::cout << i;
@@ -38,90 +58,10 @@ void main()
 		std::cout << std::endl;
 	}
 
+	std::cout << "The union time is:" << time_union * 1000 << "ms" << std::endl;
+	std::cout << "The find time is:" << time_find * 1000 << "ms" << std::endl;
 	std::cin.get();
 }
 
 
-/*************** Weighted quick-unioned *******************/
 
-int root(int p)
-{
-	while (id[p] != p)
-	{
-		id[p] = id[id[p]];		// weight quick unioned with path compression(WQUPC), 只有一行代码
-		p = id[p];
-	}
-	return p;
-}
-
-int find(int p, int q)
-{
-	return root(p) == root(q);
-}
-
-void unioned(int p, int q)
-{
-	int i = root(p);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
-	int j = root(q);
-
-	if (i == j)
-		return;
-	if (sz[i] < sz[j])
-	{
-		id[i] = j;
-		sz[j] += sz[i];
-	}
-	else
-	{
-		id[j] = i;
-		sz[i] += sz[j];
-	}
-}
-
-
-
-/*************** Quick-unioned *******************/
-
-//
-//int root(int p)
-//{
-//	while (id[p] != p)
-//	{
-//		p = id[p];
-//	}
-//	return p;
-//}
-//
-//int find(int p, int q)
-//{
-//	return root(p) == root(q);
-//}
-//
-//void unioned(int p, int q)
-//{
-//	int i = root(p);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
-//	int j = root(q);
-//	id[i] = j;
-//}
-
-
-
-/*************** Quick-find ****************/
-
-//int find(int p, int q)
-//{
-//	return (id[p] == id[q]);
-//}
-//
-//void unioned(int p, int q)
-//{
-//	int pid = id[p];			// It's necessary for these two lines code
-//	int qid = id[q];			// The value of id[p] will change while i > p
-//	for (int i = 0; i < N; i++)
-//	{
-//		if (id[i] == pid)
-//		{
-//			id[i] = qid;
-//		}
-//	}
-//}
