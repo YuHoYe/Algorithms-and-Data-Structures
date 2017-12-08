@@ -5,15 +5,17 @@ Algorithms and Data Structure achieved by C++ and Python
 - [Books and MOOCs](#books-and-moocs)
 - [Analysis of Algorithm](#analysis-of-algorithms)
 - [Union Find](./Union%20Find/Union%20Find.md)
-	- [Quick Find](./Union%20Find/Union%20Find.md#quick-find)
-	- [Quick Union](./Union%20Find/Union%20Find.md#quick-union)
-	- [Weighted Quick Union](./Union%20Find/Union%20Find.md#weighted-quick-union)
-	- [Test](./Union%20Find/Union%20Find.md#test)
-	- [Application(percolate simulation)](./Union%20Find/Union%20Find.md#applicationpercolate-simulation)
+	- [quick find](./Union%20Find/Union%20Find.md#quick-find)
+	- [quick union](./Union%20Find/Union%20Find.md#quick-union)
+	- [weighted quick union](./Union%20Find/Union%20Find.md#weighted-quick-union)
+	- [weighted QU with path compression](./Union%20Find/Union%20Find.md#weighted-qu-with-path-compression)
+	- [test](./Union%20Find/Union%20Find.md#test)
+	- [application(percolate simulation)](./Union%20Find/Union%20Find.md#applicationpercolate-simulation)
 - [Elementary Sorts](./Elementary%20Sorts/Elementary%20Sorts.md)
 	- [selection sort](./Elementary%20Sorts/Elementary%20Sorts.md/#selection-sort)
 	- [insertion sort](./Elementary%20Sorts/Elementary%20Sorts.md/#insertion-sort)
 	- [shell sort](./Elementary%20Sorts/Elementary%20Sorts.md/#shell-sort)
+	- [test](./Elementary%20Sorts/Elementary%20Sorts.md/#test)
 
 # Books and MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
