@@ -210,4 +210,10 @@ display the data structure tree in command line by using ->. You can find the di
 [test union find.cpp](./Union%20Find/test%20union%20find.cpp)
 
 ## Application
+- N-by-N grid of sites
+- Each site is open with probabilaty p
+- System percolates iff top and bottom are connected by open sites.
 
+When N is large, theory guarantees a sharp threshold p*
+- p > p*: almost certainly percolates.
+- p < p*: almost certainly does not percolate.
