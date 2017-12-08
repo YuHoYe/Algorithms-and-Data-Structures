@@ -1,5 +1,5 @@
 # Outline of Elementary Sorts
-[Sorting algorithm on Wiki](https://en.wikipedia.org/wiki/Sorting_algorithm)
+[https://en.wikipedia.org/wiki/Sorting_algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm)
 
 - [Selection sort](#selection-sort)
 - [insertion sort](#insertion-sort)
@@ -8,7 +8,7 @@
 - [test](#test)
 
 # Selection sort
-[selection sort on Wiki](https://en.wikipedia.org/wiki/Selection_sort)
+[https://en.wikipedia.org/wiki/Selection_sort](https://en.wikipedia.org/wiki/Selection_sort)
 - in iteration i, find index min of smallest remaining entry.
 - swap a[i] and a[min].
 
