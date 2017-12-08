@@ -11,7 +11,6 @@
 - [Union Find](./union_find/union_find.md)
 	- [quick find](./union_find/union_find.md#quick-find)
 	- [quick union](./union_find/union_find.md#quick-union)
-	- [weighted quick union](./union_find/union_find.md#weighted-quick-union)
 	- [weighted QU with path compression](./union_find/union_find.md#weighted-qu-with-path-compression)
 	- [test](./union_find/union_find.md#test)
 	- [application(percolate simulation)](./union_find/union_find.md#applicationpercolate-simulation)
