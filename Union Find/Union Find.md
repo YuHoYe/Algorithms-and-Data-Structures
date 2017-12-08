@@ -8,7 +8,7 @@ Given a set of N objects.
 - [quick find](#quick-find)
 - [quick union](#quick-union)
 - [weighted quick union](#weighted-quick-union)
-- [quick union with path compression](#quick-union-with-path-compression)
+- [weighted QU with path compression](#weighted-qu-with-path-compression)
 - [test](#test)
 - [application(percolate simulation)](#applicationpercolate-simulation)
 
@@ -163,7 +163,7 @@ Number of array accesses(for read or write)
 |quick union|N|N(includes cost of finding roots)|N|
 |weighted QU|N|lg N(includes cost of finding roots)|lg N|
 
-# quick union with path compression
+# weighted QU with path compression
 Just after computing the root of p, set the id of each examined node to point to that root.
 
 ## C++
