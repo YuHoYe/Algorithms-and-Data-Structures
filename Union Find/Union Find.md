@@ -1,9 +1,15 @@
-# Union Find
+# Outline of Union Find
 Given a set of N objects. 
 - **Union command**: connect two objects.
 - **Find query**: is there a path connecting the two objects?
 
-## Quick Find
+- [Quick Find](#quick-find)
+- [Quick Union](#quick-union)
+- [Weighted Quick Union](#weighted-quick-union)
+- [Test](#test)
+- [Application](#application)
+
+# Quick Find
 
 - Data structure
 	- Integer array id[] of length N.
@@ -13,7 +19,7 @@ Given a set of N objects.
 - Union
 	- To merge components containing p and q, change all entries whose id equals id[p] to id[q].
 
-#### Code(C)
+### Code(C)
 ```C
 int find(int p, int q)
 {
@@ -34,10 +40,10 @@ void unioned(int p, int q)
 }
 ```
 
-#### Code(Python)
+### Code(Python)
 coming soon
 
-#### Cost Model
+### Cost Model
 Number of array accesses(for read or write)
 
 | Algorithm | Initialize | Union | Find |
@@ -46,7 +52,7 @@ Number of array accesses(for read or write)
 
 Uion is too expensive. It take N^2 array accesses to process a sequence of N union commands on N objects.
 
-## Quick Union
+# Quick Union
 
 - Data structure
 	- Inter array id[] of length N.
@@ -57,7 +63,7 @@ Uion is too expensive. It take N^2 array accesses to process a sequence of N uni
 - Union
 	- To merge components containing p and q, set the id of p's root to the id of q's root.
 
-#### Code
+### Code
 ```C
 int root(int p)
 {
@@ -80,10 +86,10 @@ void unioned(int p, int q)
 	id[i] = j;
 }
 ```
-#### Code(Python)
+### Code(Python)
 coming soon
 
-#### Cost model
+### Cost model
 Number of array accesses(for read or write)
 
 | Algorithm | Initialize | Union | Find |
@@ -93,7 +99,7 @@ Number of array accesses(for read or write)
 
 Trees can get tall and find is too expensive(could be N array accesses).
 
-## Weighted Quick Union
+# Weighted Quick Union
 
 - Improvement
 	- Keep track of size of each tree(number of objects).
@@ -106,7 +112,7 @@ Trees can get tall and find is too expensive(could be N array accesses).
 	- Link root of smaller tree to root of larger tree.
 	- Update the sz[] array.
 
-#### Code(C)
+### Code(C)
 ```C
 int root(int p)
 {
@@ -142,10 +148,10 @@ void unioned(int p, int q)
 }
 ```
 
-#### Code(Python)
+### Code(Python)
 coming soon
 
-#### Cost model
+### Cost model
 Number of array accesses(for read or write)
 
 | Algorithm | Initialize | Union | Find |
@@ -154,10 +160,10 @@ Number of array accesses(for read or write)
 |Quick Union|N|N(includes cost of finding roots)|N|
 |Weighted QU|N|lg N(includes cost of finding roots)|lg N|
 
-## Quick union with path compression
+# Quick union with path compression
 Just after computing the root of p, set the id of each examined node to point to that root.
 
-#### Code(C)
+### Code(C)
 ```C
 int root(int p)
 {
@@ -170,10 +176,10 @@ int root(int p)
 }
 ```
 
-#### Code(Python)
+### Code(Python)
 coming soon
 
-#### Cost model
+### Cost model
 M union-find operations on a set of N objects
 
 | Algorithm | Worst-case time |
@@ -185,12 +191,12 @@ M union-find operations on a set of N objects
 |Weighted QU with path compression|N + M lg* N|
 
 
-## Test
+# Test
 display the data structure tree in command line by using ->. You can find the difference between different union find algorithms.
 
 [test union find.cpp](./Union%20Find/test%20union%20find.cpp)
 
-## Application(percolate simulation)
+# Application(percolate simulation)
 - N-by-N grid of sites
 - Each site is open with probabilaty p
 - System percolates iff top and bottom are connected by open sites.
