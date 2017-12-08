@@ -7,7 +7,6 @@ Given a set of N objects.
 
 - [quick find](#quick-find)
 - [quick union](#quick-union)
-- [weighted quick union](#weighted-quick-union)
 - [weighted QU with path compression](#weighted-qu-with-path-compression)
 - [test](#test)
 - [application(percolate simulation)](#applicationpercolate-simulation)
@@ -22,18 +21,21 @@ Given a set of N objects.
 - Union
 	- To merge components containing p and q, change all entries whose id equals id[p] to id[q].
 
-## C++
-```C++
-int find(int p, int q)
+## C
+```C
+// The quick find algorithm
+// @func QF_find if p and q are connected
+// @func QF_unioned  connect p and q
+int QF_find(int p, int q, int* id)
 {
 	return (id[p] == id[q]);
 }
 
-void unioned(int p, int q)
+void QF_unioned(int p, int q, int* id, int len)
 {
 	int pid = id[p];			// It's necessary for these two lines code
 	int qid = id[q];			// The value of id[p] will change while i > p
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < len; i++)
 	{
 		if (id[i] == pid)
 		{
@@ -46,15 +48,6 @@ void unioned(int p, int q)
 ## Python
 coming soon
 
-## cost model
-Number of array accesses(for read or write)
-
-| algorithm | initialize | union | find |
-|:---------:|:----------:|:-----:|:----:|
-|quick find|N|N|1|
-
-Union is too expensive. It take N^2 array accesses to process a sequence of N union commands on N objects.
-
 # quick union
 
 - Data structure
@@ -66,9 +59,12 @@ Union is too expensive. It take N^2 array accesses to process a sequence of N un
 - Union
 	- To merge components containing p and q, set the id of p's root to the id of q's root.
 
-## C++
-```C++
-int root(int p)
+## C
+```C
+// The quick unioned algorithm
+// @func QU_find if p and q are connected
+// @func QU_unioned  connect p and q
+int QU_root(int p, int* id)
 {
 	while (id[p] != p)
 	{
@@ -77,64 +73,58 @@ int root(int p)
 	return p;
 }
 
-int find(int p, int q)
+int QU_find(int p, int q, int* id)
 {
-	return root(p) == root(q);
+	return QU_root(p, id) == QU_root(q, id);
 }
 
-void unioned(int p, int q)
+void QU_unioned(int p, int q, int* id)
 {
-	int i = root(p);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
-	int j = root(q);
+	int i = QU_root(p, id);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
+	int j = QU_root(q, id);
 	id[i] = j;
 }
 ```
 ## Python
 coming soon
 
-## cost model
-Number of array accesses(for read or write)
-
-| algorithm | initialize | union | find |
-|:---------:|:----------:|:-----:|:----:|
-|quick find|N|N|1|
-|quick union|N|N(includes cost of finding roots)|N|
-
-Trees can get tall and find is too expensive(could be N array accesses).
-
-# weighted quick union
-
+# weighted QU with path compression
 - Improvement
 	- Keep track of size of each tree(number of objects).
 	- Balance by linking root of smaller tree to root of large tree.
 -  Data structure
 	- Same as Quick Union, but maintain extra array sz[i] to count number of objects in the tree rooted at i.
+	- After computing the root of p, set the id of each examined node to point to that root.
 -  Find
 	- Identical to Quick Union
 -  Union
 	- Link root of smaller tree to root of larger tree.
 	- Update the sz[] array.
 
-## C++
-```C++
-int root(int p)
+## C
+```C
+// The weight quick unioned with path compression algorithm
+// @func WQUPC_find if p and q are connected
+// @func WQUPC_unioned  connect p and q
+int WQUPC_root(int p, int* id)
 {
 	while (id[p] != p)
 	{
+		id[p] = id[id[p]];		// weight quick unioned with path compression(WQUPC), only one extra line
 		p = id[p];
 	}
 	return p;
 }
 
-int find(int p, int q)
+int WQUPC_find(int p, int q, int* id)
 {
-	return root(p) == root(q);
+	return WQUPC_root(p,id) == WQUPC_root(q, id);
 }
 
-void unioned(int p, int q)
+void WQUPC_unioned(int p, int q, int* id, int *sz)
 {
-	int i = root(p);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
-	int j = root(q);
+	int i = WQUPC_root(p, id);			// 对处在root的数进行连接，否则会连成圈，导致root函数无限循环
+	int j = WQUPC_root(q, id);
 
 	if (i == j)
 		return;
@@ -154,50 +144,16 @@ void unioned(int p, int q)
 ## Python
 coming soon
 
-## cost model
-Number of array accesses(for read or write)
-
-| algorithm | initialize | union | find |
-|:---------:|:----------:|:-----:|:----:|
-|quick find|N|N|1|
-|quick union|N|N(includes cost of finding roots)|N|
-|weighted QU|N|lg N(includes cost of finding roots)|lg N|
-
-# weighted QU with path compression
-Just after computing the root of p, set the id of each examined node to point to that root.
-
-## C++
-```C++
-int root(int p)
-{
-	while (id[p] != p)
-	{
-		id[p] = id[id[p]];		// weight quick union with path compression(WQUPC), only one extra line of code.
-		p = id[p];
-	}
-	return p;
-}
-```
-
-## Python
-coming soon
-
-## cost model
-M union-find operations on a set of N objects
-
-| algorithm | worst-case time |
-|:---------:|:---------------:|
-|quick Find|MN|
-|quick Union|MN|
-|weighted QU|N + M log N|
-|QU with path compression|N + M log N|
-|weighted QU with path compression|N + M lg* N|
-
-
 # test
+[test.cpp](./test.cpp)
+
 display the data structure tree in command line by using ->. You can find the difference between different union find algorithms.
 
-[test union find.cpp](./test%20union%20find.cpp)
+| Algorithms | Find Time | Union Time |
+|:----------:|:---------:|:----------:|
+|quick find|0.137509ms|2.15503ms|
+|quick union|0.518095ms|0.250636ms|
+|weighted QU with path compression|0.20992ms|0.259413ms|
 
 # application(percolate simulation)
 - N-by-N grid of sites
