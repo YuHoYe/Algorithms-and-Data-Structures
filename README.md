@@ -3,6 +3,11 @@
 # Outline
 - [Books and MOOCs](#books-and-moocs)
 - [Analysis of Algorithm](#analysis-of-algorithms)
+- [Elementary Sorts](./Elementary%20Sorts/Elementary%20Sorts.md)
+	- [selection sort](./Elementary%20Sorts/Elementary%20Sorts.md/#selection-sort)
+	- [insertion sort](./Elementary%20Sorts/Elementary%20Sorts.md/#insertion-sort)
+	- [shell sort](./Elementary%20Sorts/Elementary%20Sorts.md/#shell-sort)
+	- [test](./Elementary%20Sorts/Elementary%20Sorts.md/#test)
 - [Union Find](./union_find/union_find.md)
 	- [quick find](./union_find/union_find.md#quick-find)
 	- [quick union](./union_find/union_find.md#quick-union)
@@ -10,11 +15,7 @@
 	- [weighted QU with path compression](./union_find/union_find.md#weighted-qu-with-path-compression)
 	- [test](./union_find/union_find.md#test)
 	- [application(percolate simulation)](./union_find/union_find.md#applicationpercolate-simulation)
-- [Elementary Sorts](./Elementary%20Sorts/Elementary%20Sorts.md)
-	- [selection sort](./Elementary%20Sorts/Elementary%20Sorts.md/#selection-sort)
-	- [insertion sort](./Elementary%20Sorts/Elementary%20Sorts.md/#insertion-sort)
-	- [shell sort](./Elementary%20Sorts/Elementary%20Sorts.md/#shell-sort)
-	- [test](./Elementary%20Sorts/Elementary%20Sorts.md/#test)
+
 
 # Books and MOOCs
 [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) Made by Princeton University
