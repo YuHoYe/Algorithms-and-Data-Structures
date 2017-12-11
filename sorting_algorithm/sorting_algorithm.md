@@ -1,12 +1,15 @@
 # Sorting Algorithm
 [Wiki](https://en.wikipedia.org/wiki/Sorting_algorithm)
 
+
 # Outline
 - [selection sort](#selection-sort)
 - [insertion sort](#insertion-sort)
 - [shell sort](#shell-sort)
 - [quick sort](#quick-sort)
+- [merge sort](#merge-sort)
 - [test](#test)
+
 
 # selection sort
 [Wiki](https://en.wikipedia.org/wiki/Selection_sort)
@@ -32,6 +35,7 @@ void selection_sort(int* arr, int len)
 }
 ```
 
+
 # insertion sort
 [Wiki](https://en.wikipedia.org/wiki/Insertion_sort)
 - in iteration i, swap a[i] with each lager entry to its left.
@@ -50,6 +54,7 @@ void insertion_sort(int* arr, int len)
 	}
 }
 ```
+
 
 # shell sort
 [Wiki](https://en.wikipedia.org/wiki/Shellsort)
@@ -78,6 +83,7 @@ void shell_sort(int* arr, int len)
 	}
 }
 ```
+
 
 # quick sort
 [Wiki](https://en.wikipedia.org/wiki/Quicksort)
@@ -124,12 +130,56 @@ void quick_sort_recursive(int* arr, int start, int end)
 ```
 
 
+# merge sort
+[Wiki](https://en.wikipedia.org/wiki/Merge_sort)
+- Divide array into two halves
+- Recursively sort each half
+- Merge two halves
+
+## C
+```C
+// The merge sort algorithm
+// @param arr[] The array to be sorted
+// @param len The amount of elements in the array
+void merge_sort(int arr[], const int len)
+{
+	int* reg = new int[len];
+	merge_sort_recursive(arr, reg, 0, len - 1);
+}
+// The merge sort recursive part
+// @param arr[] The array to be sorted
+// @param reg[] The auxiliary array
+// @param start The start index for sort, normally equal to 0
+// @param end The end index for sort, normally equal to length(arr)-1
+void merge_sort_recursive(int arr[], int reg[], int start, int end)
+{
+	if (start >= end)
+		return;
+	int len = end - start, mid = (len >> 1) + start;
+	int start1 = start, end1 = mid;
+	int start2 = mid + 1, end2 = end;
+	merge_sort_recursive(arr, reg, start1, end1);
+	merge_sort_recursive(arr, reg, start2, end2);
+	int k = start;
+	while (start1 <= end1 && start2 <= end2)
+		reg[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
+	while (start1 <= end1)
+		reg[k++] = arr[start1++];
+	while (start2 <= end2)
+		reg[k++] = arr[start2++];
+	for (k = start; k <= end; k++)
+		arr[k] = reg[k];
+}
+```
+
+
 # test
 [test.cpp](./test.cpp)
 
-| Algroithms | Time(Sort 1000 numbers in VS 2017 64bit) |
+| Algroithms | Time(Sort 1000 random numbers in VS 2017 64bit) |
 |:----------:|:----------------------------------------:|
 |selection sort|1.30731ms|
 |insertion_sort|5.06953ms|
 |shell sort|0.20992ms|
 |quick sort|0.14604ms|
+|merge sort|0.14311ms|
