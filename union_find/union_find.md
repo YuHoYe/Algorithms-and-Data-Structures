@@ -152,7 +152,7 @@ display the data structure tree in command line by using ->. You can find the di
 |:----------:|:---------:|:----------:|
 |quick find|0.137509ms|2.15503ms|
 |quick union|0.518095ms|0.250636ms|
-|weighted QU with path compression|0.20992ms|0.259413ms|
+|weighted QU with path compression|0.209920ms|0.259413ms|
 
 # application(percolate simulation)
 - N-by-N grid of sites

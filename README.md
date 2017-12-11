@@ -22,5 +22,8 @@
 
 # Analysis of Algorithms
 Algorithm complexity is something designed to compare two algorithms at the idea level — ignoring low-level details such as the implementation programming language, the hardware the algorithm runs on, or the instruction set of the given CPU.
-
-![](./img/commonly-used%20notations.png)
+- [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
+- [A Gentle Introduction to Algorithm Complexity Analysis](http://discrete.gr/complexity/)
+- [Cheat sheet](http://bigocheatsheet.com/)
+- [Computational Complexity: Section 1](https://www.topcoder.com/community/data-science/data-science-tutorials/computational-complexity-section-1/)
+- [Computational Complexity: Section 2](https://www.topcoder.com/community/data-science/data-science-tutorials/computational-complexity-section-2/)
