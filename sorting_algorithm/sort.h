@@ -2,11 +2,14 @@
 #define SORT_H_
 
 void swap(int* x, int* y);
-void selection_sort(int* arr, int len);
-void insertion_sort(int* arr, int len);
-void shell_sort(int* arr, int len);
-void quick_sort(int* arr, int len);
-void quick_sort_recursive(int* arr, int start, int end);
+void selection_sort(int arr[], int len);
+void insertion_sort(int arr[], int len);
+void shell_sort(int arr[], int len);
+void quick_sort(int arr[], int len);
+void quick_sort_recursive(int arr[], int start, int end);
+void merge_sort(int arr[], const int len);
+void merge_sort_recursive(int arr[], int reg[], int start, int end);
+
 
 
 void swap(int *x, int *y)
@@ -18,9 +21,9 @@ void swap(int *x, int *y)
 
 
 // The selection sort algorithm
-// @param arr The array to be sorted
+// @param arr[] The array to be sorted
 // @param len The amount of elements in the array
-void selection_sort(int* arr, int len)
+void selection_sort(int arr[], int len)
 {
 	for (int i = 0; i < len; i++)
 	{
@@ -35,9 +38,9 @@ void selection_sort(int* arr, int len)
 
 
 // The insertion sort algorithm
-// @param arr The array to be sorted
+// @param arr[] The array to be sorted
 // @param len The amount of elements in the array
-void insertion_sort(int* arr, int len)
+void insertion_sort(int arr[], int len)
 {
 	for (int i = 0; i < len; i++)
 	{
@@ -48,9 +51,9 @@ void insertion_sort(int* arr, int len)
 
 
 // The insertion sort algorithm
-// @param arr The array to be sorted
+// @param arr[] The array to be sorted
 // @param len The amount of elements in the array
-void shell_sort(int* arr, int len)
+void shell_sort(int arr[], int len)
 {
 	int h = 1;
 	while (len > 3 * h)
@@ -70,17 +73,17 @@ void shell_sort(int* arr, int len)
 
 
 // The quick sort algorithm
-// @param arr The array to be sorted
+// @param arr[] The array to be sorted
 // @param len The amount of elements in the array
-void quick_sort(int* arr, int len) 
+void quick_sort(int arr[], int len) 
 {
 	quick_sort_recursive(arr, 0, len - 1);
 }
-// The quick sort recursive part algorithm
-// @param arr The array to be sorted
-// @param start The start index for sort, normaly equal to 0
-// @param end The end index for sort, normaly equal to length(arr)-1
-void quick_sort_recursive(int* arr, int start, int end)
+// The quick sort recursive part
+// @param arr[] The array to be sorted
+// @param start The start index for sort, normally equal to 0
+// @param end The end index for sort, normally equal to length(arr)-1
+void quick_sort_recursive(int arr[], int start, int end)
 {
 	if (start >= end)
 		return;		
@@ -102,5 +105,40 @@ void quick_sort_recursive(int* arr, int start, int end)
 		quick_sort_recursive(arr, start, left - 1);
 	quick_sort_recursive(arr, left + 1, end);
 }
+
+
+// The merge sort algorithm
+// @param arr[] The array to be sorted
+// @param len The amount of elements in the array
+void merge_sort(int arr[], const int len)
+{
+	int* reg = new int[len];
+	merge_sort_recursive(arr, reg, 0, len - 1);
+}
+// The merge sort recursive part
+// @param arr[] The array to be sorted
+// @param reg[] The auxiliary array
+// @param start The start index for sort, normally equal to 0
+// @param end The end index for sort, normally equal to length(arr)-1
+void merge_sort_recursive(int arr[], int reg[], int start, int end)
+{
+	if (start >= end)
+		return;
+	int len = end - start, mid = (len >> 1) + start;
+	int start1 = start, end1 = mid;
+	int start2 = mid + 1, end2 = end;
+	merge_sort_recursive(arr, reg, start1, end1);
+	merge_sort_recursive(arr, reg, start2, end2);
+	int k = start;
+	while (start1 <= end1 && start2 <= end2)
+		reg[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
+	while (start1 <= end1)
+		reg[k++] = arr[start1++];
+	while (start2 <= end2)
+		reg[k++] = arr[start2++];
+	for (k = start; k <= end; k++)
+		arr[k] = reg[k];
+}
+
 
 #endif 

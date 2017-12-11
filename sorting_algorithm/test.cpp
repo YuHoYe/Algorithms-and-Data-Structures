@@ -17,7 +17,7 @@ void main()
 
 	QueryPerformanceCounter(&nBeginTime); // Start the timer
 
-	quick_sort(test,sizeof(test)/sizeof(int)); // Sort
+	merge_sort(test,sizeof(test)/sizeof(int)); // Sort
 	
 	QueryPerformanceCounter(&nEndTime);	// End the timer   
 	time = (double)(nEndTime.QuadPart - nBeginTime.QuadPart) / (double)nFreq.QuadPart; // Calculate the function run time
