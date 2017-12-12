@@ -6,8 +6,8 @@
 - [selection sort](#selection-sort)
 - [insertion sort](#insertion-sort)
 - [shell sort](#shell-sort)
-- [quick sort](#quick-sort)
 - [merge sort](#merge-sort)
+- [quick sort](#quick-sort)
 - [test](#test)
 
 
@@ -84,6 +84,55 @@ void shell_sort(int* arr, int len)
 }
 ```
 
+# merge sort
+[Wiki](https://en.wikipedia.org/wiki/Merge_sort)
+- Divide array into two halves
+- Recursively sort each half
+- Merge two halves
+
+> Insertion sort small subarrays is a practial improvement.
+
+## C
+```C
+// The merge sort algorithm
+// @param arr[] The array to be sorted
+// @param len The amount of elements in the array
+void merge_sort(int arr[], const int len)
+{
+	int* reg = new int[len];
+	merge_sort_recursive(arr, reg, 0, len - 1);
+}
+// The merge sort recursive part
+// @param arr[] The array to be sorted
+// @param reg[] The auxiliary array
+// @param start The start index for sort, normally equal to 0
+// @param end The end index for sort, normally equal to length(arr)-1
+void merge_sort_recursive(int arr[], int reg[], int start, int end)
+{
+	int Cutoff = 7;		// Cutoff to insertion sort = 7 items.
+	if (start >= end)
+		return;
+	if (end <= start + Cutoff - 1)			// Using insertion sort for small subarrys.
+	{
+		insertion_sort(&arr[start], end - start + 1);
+		return;
+	}
+	int len = end - start, mid = (len >> 1) + start;
+	int start1 = start, end1 = mid;
+	int start2 = mid + 1, end2 = end;
+	merge_sort_recursive(arr, reg, start1, end1);
+	merge_sort_recursive(arr, reg, start2, end2);
+	int k = start;
+	while (start1 <= end1 && start2 <= end2)
+		reg[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
+	while (start1 <= end1)
+		reg[k++] = arr[start1++];
+	while (start2 <= end2)
+		reg[k++] = arr[start2++];
+	for (k = start; k <= end; k++)
+		arr[k] = reg[k];
+}
+```
 
 # quick sort
 [Wiki](https://en.wikipedia.org/wiki/Quicksort)
@@ -92,23 +141,31 @@ void shell_sort(int* arr, int len)
 - Partitioning: reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position. This is called the partition operation.
 - Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values
 
+> Insertion sort small subarrays is a practial improvement.
+
 ## C
 ```C
 // The quick sort algorithm
-// @param arr The array to be sorted
+// @param arr[] The array to be sorted
 // @param len The amount of elements in the array
-void quick_sort(int* arr, int len) 
+void quick_sort(int arr[], int len) 
 {
 	quick_sort_recursive(arr, 0, len - 1);
 }
-// The quick sort recursive part algorithm
-// @param arr The array to be sorted
-// @param start The start index for sort, normaly equal to 0
-// @param end The end index for sort, normaly equal to length(arr)-1
-void quick_sort_recursive(int* arr, int start, int end)
+// The quick sort recursive part
+// @param arr[] The array to be sorted
+// @param start The start index for sort, normally equal to 0
+// @param end The end index for sort, normally equal to length(arr)-1
+void quick_sort_recursive(int arr[], int start, int end)
 {
+	int Cutoff = 10;		// Cutoff to insertion sort = 10 items.
 	if (start >= end)
 		return;		
+	if (end <= start + Cutoff - 1)			// Using insertion sort for small subarrys.
+	{
+		insertion_sort(&arr[start], end - start + 1);
+		return;
+	}
 	int mid = arr[end];
 	int left = start, right = end - 1;
 	while (left < right) 
@@ -130,56 +187,14 @@ void quick_sort_recursive(int* arr, int start, int end)
 ```
 
 
-# merge sort
-[Wiki](https://en.wikipedia.org/wiki/Merge_sort)
-- Divide array into two halves
-- Recursively sort each half
-- Merge two halves
-
-## C
-```C
-// The merge sort algorithm
-// @param arr[] The array to be sorted
-// @param len The amount of elements in the array
-void merge_sort(int arr[], const int len)
-{
-	int* reg = new int[len];
-	merge_sort_recursive(arr, reg, 0, len - 1);
-}
-// The merge sort recursive part
-// @param arr[] The array to be sorted
-// @param reg[] The auxiliary array
-// @param start The start index for sort, normally equal to 0
-// @param end The end index for sort, normally equal to length(arr)-1
-void merge_sort_recursive(int arr[], int reg[], int start, int end)
-{
-	if (start >= end)
-		return;
-	int len = end - start, mid = (len >> 1) + start;
-	int start1 = start, end1 = mid;
-	int start2 = mid + 1, end2 = end;
-	merge_sort_recursive(arr, reg, start1, end1);
-	merge_sort_recursive(arr, reg, start2, end2);
-	int k = start;
-	while (start1 <= end1 && start2 <= end2)
-		reg[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
-	while (start1 <= end1)
-		reg[k++] = arr[start1++];
-	while (start2 <= end2)
-		reg[k++] = arr[start2++];
-	for (k = start; k <= end; k++)
-		arr[k] = reg[k];
-}
-```
-
-
 # test
 [test.cpp](./test.cpp)
 
 | Algroithms | Time(Sort 1000 random numbers in VS 2017 64bit) |
 |:----------:|:----------------------------------------:|
-|selection sort|1.30731ms|
-|insertion_sort|5.06953ms|
-|shell sort|0.20992ms|
-|quick sort|0.14604ms|
-|merge sort|0.14311ms|
+|selection sort|1.589640ms|
+|insertion_sort|4.891550ms|
+|shell sort|0.220648ms|
+|merge sort|0.125806ms|
+|quick sort|0.128975ms|
+
