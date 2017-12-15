@@ -7,6 +7,7 @@
 	- [selection sort](./sorting_algorithm/sorting_algorithm.md/#selection-sort)
 	- [insertion sort](./sorting_algorithm/sorting_algorithm.md/#insertion-sort)
 	- [shell sort](./sorting_algorithm/sorting_algorithm.md/#shell-sort)
+	- [merge sort](./sorting_algorithm/sorting_algorithm.md/#merge-sort)
 	- [quick sort](./sorting_algorithm/sorting_algorithm.md/#quick-sort)
 	- [test](./sorting_algorithm/sorting_algorithm.md/#test)
 - [Union Find](./union_find/union_find.md)
