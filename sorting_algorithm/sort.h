@@ -85,8 +85,14 @@ void quick_sort(int arr[], int len)
 // @param end The end index for sort, normally equal to length(arr)-1
 void quick_sort_recursive(int arr[], int start, int end)
 {
+	int Cutoff = 10;		// Cutoff to insertion sort = 10 items.
 	if (start >= end)
 		return;		
+	if (end <= start + Cutoff - 1)			// Using insertion sort for small subarrys.
+	{
+		insertion_sort(&arr[start], end - start + 1);
+		return;
+	}
 	int mid = arr[end];
 	int left = start, right = end - 1;
 	while (left < right) 
@@ -122,8 +128,14 @@ void merge_sort(int arr[], const int len)
 // @param end The end index for sort, normally equal to length(arr)-1
 void merge_sort_recursive(int arr[], int reg[], int start, int end)
 {
+	int Cutoff = 7;		// Cutoff to insertion sort = 7 items.
 	if (start >= end)
 		return;
+	if (end <= start + Cutoff - 1)			// Using insertion sort for small subarrys.
+	{
+		insertion_sort(&arr[start], end - start + 1);
+		return;
+	}
 	int len = end - start, mid = (len >> 1) + start;
 	int start1 = start, end1 = mid;
 	int start2 = mid + 1, end2 = end;
